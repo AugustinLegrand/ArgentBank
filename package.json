@@ -1,0 +1,7 @@
+{
+    "scripts": {
+        "initproject": "cd ./apiAuth && yarn install && cd .. && cd ./redux-react && yarn install",
+        "api": "cd ./apiAuth && yarn dev:server",
+        "client": "cd ./redux-react && yarn start"
+    }
+}
