@@ -20,42 +20,71 @@ function Transaction(props) {
             </div>
             <div className="Transactions-content">
                 <table>
-                    <tr>
-                        <th>DATE</th>
-                        <th>DESCRIPTION</th>
-                        <th>AMOUNT</th>
-                        <th>BALANCE</th>
-                    </tr>
-                    <tr>
-                        <td>June 20th, 2020</td>
-                        <td>Golden Sun Bakery</td>
-                        <td>$5.00</td>
-                        <td>$2082.79</td>
-                    </tr>
-                    <tr>
-                        <td>June 20th, 2020</td>
-                        <td>Golden Sun Bakery</td>
-                        <td>$5.00</td>
-                        <td>$2082.79</td>
-                    </tr>
-                    <tr>
-                        <td>June 20th, 2020</td>
-                        <td>Golden Sun Bakery</td>
-                        <td>$5.00</td>
-                        <td>$2082.79</td>
-                    </tr>
-                    <tr>
-                        <td>June 20th, 2020</td>
-                        <td>Golden Sun Bakery</td>
-                        <td>$5.00</td>
-                        <td>$2082.79</td>
-                    </tr>
-                    <tr>
-                        <td>June 20th, 2020</td>
-                        <td>Golden Sun Bakery</td>
-                        <td>$5.00</td>
-                        <td>$2082.79</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>DESCRIPTION</th>
+                            <th>AMOUNT</th>
+                            <th>BALANCE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="Transactions-line">
+                            <td>
+                                <div className="Transactions-arrow">
+                                    <img src="./../arrow-down.svg" alt="Arrow down" />
+                                    <p>June 20th, 2020</p>
+                                </div>
+                            </td>
+                            <td>Golden Sun Bakery</td>
+                            <td>$5.00</td>
+                            <td>$2082.79</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div className="Transactions-arrow">
+                                    <img src="./../arrow-down.svg" alt="Arrow down" />
+                                    <p>June 20th, 2020</p>
+                                </div>
+                            </td>
+                            <td>Golden Sun Bakery</td>
+                            <td>$5.00</td>
+                            <td>$2082.79</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div className="Transactions-arrow">
+                                    <img src="./../arrow-down.svg" alt="Arrow down" />
+                                    <p>June 20th, 2020</p>
+                                </div>
+                            </td>
+                            <td>Golden Sun Bakery</td>
+                            <td>$5.00</td>
+                            <td>$2082.79</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div className="Transactions-arrow">
+                                    <img src="./../arrow-down.svg" alt="Arrow down" />
+                                    <p>June 20th, 2020</p>
+                                </div>
+                            </td>
+                            <td>Golden Sun Bakery</td>
+                            <td>$5.00</td>
+                            <td>$2082.79</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div className="Transactions-arrow">
+                                    <img src="./../arrow-down.svg" alt="Arrow down" />
+                                    <p>June 20th, 2020</p>
+                                </div>
+                            </td>
+                            <td>Golden Sun Bakery</td>
+                            <td>$5.00</td>
+                            <td>$2082.79</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

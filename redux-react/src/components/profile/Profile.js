@@ -10,8 +10,6 @@ function Profile(props, history) {
     const { auth, EditProfile } = props
     const [editState, setEditState] = useState({})
 
-    console.log("PROFILE AUTH : ", auth)
-
     const navigate = useNavigate()
 
 
@@ -21,8 +19,6 @@ function Profile(props, history) {
                 <h1>Welcome back</h1>
                 <form onSubmit={(e) => {
                     e.preventDefault()
-
-                    console.log("edit : ", editState);
                     EditProfile(editState)
                     navigate('/signin', { replace: true })
                 }}>

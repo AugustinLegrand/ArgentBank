@@ -28,7 +28,6 @@ const LoginAuth = (loginState, history, setErrorHandler) => {
     return async (dispatch) => {
         try {
             const { data } = await authDataService.login(loginState)
-            console.log("log", decodeToken(data.body.token));
             dispatch({
                 type: AuthActionType.LOGIN_SUCCESS,
                 payload: data.body.token

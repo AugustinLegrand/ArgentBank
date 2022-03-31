@@ -322,25 +322,62 @@
     border-radius: 5px;
   }
 
+  .Transactions-header {
+    border-top: 2px solid rgb(221, 220, 220);
+  }
+
+  .Transactions-header .account-balance {
+    font-size: 2.5em;
+  }
+
   .Transactions-content {
     background-color: rgb(228, 228, 228);
-    height: 70vh;
+    height: 66vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .Transactions-content table {
-    margin: 15px;
+    margin: 10%;
+    padding: 15px;
     width: 100%;
     background-color: white;
+    border-collapse: collapse;
   }
+  
 
+  .Transactions-content table thead tr {
+    border: none;
+    background-color: rgb(228, 228, 228);
+  }
+  
+  .Transactions-content table th {
+    font-weight: initial;
+    padding-bottom: 5px;
+  }
+  
+  .Transactions-content table tr {
+    border-bottom: 2px solid rgb(199, 199, 199);
+  }
   
   .Transactions-content table tr td {
     padding: 15px;
-    border-bottom: 2px solid black;
+  }
+  
+  .Transactions-arrow {
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
-  .Transactions-content table tr {
-    border-bottom: 2px solid red;
+  .Transactions-arrow img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 25px;
+    height: 25px;
   }
 
   /*

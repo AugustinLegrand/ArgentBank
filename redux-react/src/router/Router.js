@@ -8,9 +8,6 @@ import Transaction from "../components/transactions/Transaction";
 function Router(props) {
 
     const { auth } = props
-
-    console.log("ROUTER AUTH : ",  auth);
-
     return (
         <BrowserRouter>
             <Routes>

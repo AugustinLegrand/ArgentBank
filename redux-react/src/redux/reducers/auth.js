@@ -62,7 +62,6 @@ const getAuthState = () => {
  * @version 2.0.0
  */
 const getAuthState = () => {
-    console.log("CALL FUNCTION `GET_AUTH_STATE`");
 
     const auth = localStorage.getItem("auth")
 
@@ -115,7 +114,6 @@ const authReducer = (state = newAuth, action) => {
     
         case AuthActionType.EDIT_PROFILE_SUCCESS:
         
-            console.log("EDIT PROFILE STATE : ", action.payload);
 
             const newAuthState = {
                 isLoggedIn: true,

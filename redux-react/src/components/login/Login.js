@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { connect } from "react-redux";
 import { LoginAuth } from "../../redux/actions/auth";
