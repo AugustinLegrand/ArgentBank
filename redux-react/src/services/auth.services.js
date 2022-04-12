@@ -6,7 +6,11 @@ class AuthDataService {
         return httpCommon.post('/login', data)
     }
 
-    update(data, jwt) {
+    getProfile() {
+        return httpCommon.post('/profile')
+    }
+
+    update(data) {
         return httpCommon.put('/profile', data)
     }
 

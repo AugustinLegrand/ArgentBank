@@ -43,10 +43,11 @@ const EditProfile = (editState) => {
     return async (dispatch) => {
 
         try {
-            const { data } = await authDataService.update(editState)
+            const up = await authDataService.update(editState)
+            console.log(up);
             dispatch({
                 type: AuthActionType.EDIT_PROFILE_SUCCESS,
-                payload: data
+                payload: up.data
             })
         } catch (error) {
             

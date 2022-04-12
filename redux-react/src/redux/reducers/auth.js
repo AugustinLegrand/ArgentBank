@@ -2,6 +2,7 @@
 import { decodeToken } from "react-jwt";
 import toastr from "toastr";
 import httpCommon from "../../http-common";
+import authServices from "../../services/auth.services";
 import { AuthActionType } from "../actions/auth.types";
 
 const initAuthState = {
@@ -55,28 +56,31 @@ const getAuthState = () => {
     }
 }*/
 
+async function getProfileInfo(token) {
+    return authServices.getProfile()
+}
+
 /**
  * @name AuthState
  * @description Système d'authentification
  * @author Augustin
  * @version 2.0.0
  */
+let userUpdate = {}
 const getAuthState = () => {
 
     const auth = localStorage.getItem("auth")
 
     if (auth) {
-
-        const authobj = decodeToken(auth)
+        
+        httpCommon.defaults.headers.common['Authorization'] = `Bearer ${auth}`
 
         const newAuthState = {
             isLoggedIn: true,
             jwttoken: auth,
-            user: authobj
+            user: userUpdate
         }
-
         authState = newAuthState
-        httpCommon.defaults.headers.common['Authorization'] = `Bearer ${auth}`
 
         return newAuthState
     }
@@ -85,7 +89,8 @@ const getAuthState = () => {
 
 }
 
-const newAuth = getAuthState()
+const newAuth =  getAuthState()
+console.log(newAuth);
 const authReducer = (state = newAuth, action) => {
     switch (action.type) {
         case AuthActionType.LOGIN_SUCCESS:
@@ -122,6 +127,7 @@ const authReducer = (state = newAuth, action) => {
             }
 
             authState.user = newAuthState.user
+            
             toastr.success("Votre profile a bien été modifié !", "Authentification", {
                 closeButton: true,
                 progressBar: true

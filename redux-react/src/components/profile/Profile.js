@@ -1,17 +1,23 @@
-import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { EditProfile, LogoutAuth } from "../../redux/actions/auth";
+import authServices from "../../services/auth.services";
 import { accounts, accountView } from "./Accounts";
 
 function Profile(props, history) {
 
     const { auth, EditProfile } = props
     const [editState, setEditState] = useState({})
+    const [user, setUser] = useState({})
+
+    useEffect(async () => {
+        const { data } = await authServices.getProfile()
+        setUser({ firstName: data.body.firstName, lastName: data.body.lastName })
+    }, [user])
+
 
     const navigate = useNavigate()
-
 
     return (
         <div className="profile">
@@ -23,13 +29,13 @@ function Profile(props, history) {
                     navigate('/signin', { replace: true })
                 }}>
                     <div>
-                        <input type="text" placeholder={auth.user.firstName} onChange={(e) => {
+                        <input type="text" placeholder={user.firstName} onChange={(e) => {
                             const firstName = e.target.value
                             setEditState({...editState, ...{firstName}})
                         }} />
                     </div>
                     <div>
-                        <input type="text" placeholder={auth.user.lastName} onChange={(e) => {
+                        <input type="text" placeholder={user.lastName} onChange={(e) => {
                             const lastName = e.target.value
                             setEditState({...editState, ...{ lastName }})
                         }} />
