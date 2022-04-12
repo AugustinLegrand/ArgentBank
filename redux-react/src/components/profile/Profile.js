@@ -11,10 +11,15 @@ function Profile(props, history) {
     const [editState, setEditState] = useState({})
     const [user, setUser] = useState({})
 
-    useEffect(async () => {
+    async function update() {
         const { data } = await authServices.getProfile()
         setUser({ firstName: data.body.firstName, lastName: data.body.lastName })
-    }, [user])
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(async () => {
+        await update()
+    }, [])
 
 
     const navigate = useNavigate()
